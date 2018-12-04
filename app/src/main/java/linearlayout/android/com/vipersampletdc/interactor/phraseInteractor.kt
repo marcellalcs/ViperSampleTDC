@@ -9,7 +9,7 @@ import linearlayout.android.com.vipersampletdc.interactor.utils.getRandomElement
 class PhraseInteractor {
 
     fun fetchPhrases(): Observable<String?> {
-        return HTTPManager.phrasesService.fetchRandomPhrase(10)
+        return HTTPManager.phrasesService.fetchRandomPhrase()
                 .map { it.phrases.getRandomElement()?.phrase }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

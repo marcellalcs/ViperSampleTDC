@@ -6,7 +6,7 @@ import linearlayout.android.com.vipersampletdc.interactor.service.PhrasesService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-private const val BASE_PHRASES_URL: String = "http://api.icndb.com/jokes/"
+private const val BASE_PHRASES_URL: String = "https://talaikis.com/api/"
 
 object HTTPManager {
     val phrasesService by lazy { createPhraseService() }
