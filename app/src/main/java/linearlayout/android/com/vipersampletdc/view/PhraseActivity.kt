@@ -14,6 +14,8 @@ class PhraseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.phrase_activity)
 
+        presenter.setInitialPhrase()
+
         newPhraseButton.setOnClickListener {
             presenter.generateRandomPhrase()
         }

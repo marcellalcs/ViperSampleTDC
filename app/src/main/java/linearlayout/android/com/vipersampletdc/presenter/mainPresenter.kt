@@ -4,6 +4,7 @@ import android.util.Log
 import io.reactivex.disposables.Disposable
 import linearlayout.android.com.vipersampletdc.view.MainActivity
 import linearlayout.android.com.vipersampletdc.interactor.PhraseInteractor
+import linearlayout.android.com.vipersampletdc.router.navigateToPhraseScreen
 
 class MainPresenter(var view: MainActivity) {
 
@@ -13,7 +14,7 @@ class MainPresenter(var view: MainActivity) {
     fun generateRandomPhrase() {
         disposable = interactor.fetchPhrase().subscribe({ randomPhrase ->
             randomPhrase?.let {
-                //navigateToPhraseScreen(view, randomPhrase)
+                navigateToPhraseScreen(view, randomPhrase.phrase)
             }
         }, { e ->
             Log.e("MainPresenter", e.message, e)
