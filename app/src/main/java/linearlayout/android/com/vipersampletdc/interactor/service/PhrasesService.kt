@@ -7,6 +7,6 @@ import retrofit2.http.Path
 
 interface PhrasesService {
 
-        @GET("random/{quantity}")
-        fun fetchRandomPhrase(@Path("quantity") quantity : Int) : Observable<PhraseResultEntity>
+        @GET("quotes/")
+        fun fetchRandomPhrase() : Observable<PhraseResultEntity>
 }
