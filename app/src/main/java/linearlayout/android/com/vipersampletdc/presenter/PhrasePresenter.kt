@@ -11,9 +11,9 @@ class PhrasePresenter(var view: PhraseActivity) {
     var disposable: Disposable? = null
 
     fun generateRandomPhrase() {
-        disposable = interactor.fetchPhrases().subscribe({ randomPhrase ->
+        disposable = interactor.fetchPhrase().subscribe({ randomPhrase ->
             randomPhrase?.let {
-                view.setPhraseText(randomPhrase)
+                view.setPhraseText(randomPhrase.phrase)
             }
         }, { e ->
             Log.e("PhrasePresenter", e.message, e)

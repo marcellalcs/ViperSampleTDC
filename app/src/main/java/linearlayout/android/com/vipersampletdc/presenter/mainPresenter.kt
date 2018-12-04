@@ -11,7 +11,7 @@ class MainPresenter(var view: MainActivity) {
     var disposable: Disposable? = null
 
     fun generateRandomPhrase() {
-        disposable = interactor.fetchPhrases().subscribe({ randomPhrase ->
+        disposable = interactor.fetchPhrase().subscribe({ randomPhrase ->
             randomPhrase?.let {
                 //navigateToPhraseScreen(view, randomPhrase)
             }
